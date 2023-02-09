@@ -1,2 +1,2 @@
 #!/bin/bash
-sudo -rwxr-xr-- hello
+sudo gu+x, o=r hello
