@@ -1,2 +1,2 @@
 #!/bin/bash
-sudo chmod gu=rwx, r=o hello
+sudo -rwxr-xr-- hello
