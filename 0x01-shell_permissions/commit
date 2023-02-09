@@ -2,4 +2,3 @@
 git add .
 git commit -m "Permissions"
 git push origin master
-clear
