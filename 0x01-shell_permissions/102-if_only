@@ -1,2 +1,2 @@
 #!/bin/bash
-if {u=guillaume} {sudo chown betty hello}
+sudo if { u == guillaume } {chown betty hello}
