@@ -1,2 +1,2 @@
 #!/bin/bash
-chmod gu=rwx, r=o, u+x hello
+sudo chmod gu=rwx, r=o hello
