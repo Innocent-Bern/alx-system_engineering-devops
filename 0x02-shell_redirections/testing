@@ -1,8 +1,0 @@
-#!/bin/bash
-if [$1 -eq 0];
-then
-	echo "Message Missing"
-	exit 1
-else
-	echo "$1"
-fi
