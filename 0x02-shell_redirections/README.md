@@ -9,3 +9,5 @@ New line
 20 Script that removes all letters c and C from input
 
 
+
+21: A script that reverses its input
