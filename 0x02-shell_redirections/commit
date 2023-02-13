@@ -1,5 +1,5 @@
 #!/bin/bash
-echo -e "\n $1" >> README.md
+echo -e "$1" >> README.md
 git add .
 git commit -m "$2"
 git push origin master
