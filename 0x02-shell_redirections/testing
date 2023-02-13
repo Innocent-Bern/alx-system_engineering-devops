@@ -1,2 +1,8 @@
 #!/bin/bash
-echo "$1 baby"
+if [$1 -eq 0];
+then
+	echo "Message Missing"
+	exit 1
+else
+	echo "$1"
+fi
