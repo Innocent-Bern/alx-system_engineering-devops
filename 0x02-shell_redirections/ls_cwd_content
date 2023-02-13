@@ -1,0 +1,15 @@
+total 56
+drwxr-xr-x 2 innocentb innocentb 4096 Feb 13 18:29 .
+drwxr-xr-x 6 innocentb innocentb 4096 Feb 13 18:20 ..
+-rwxr-xr-x 1 innocentb innocentb   36 Feb 13 18:19 0-hello_world
+-rwxr-xr-x 1 innocentb innocentb   31 Feb 13 18:19 1-confused_smiley
+-rwxr-xr-x 1 innocentb innocentb   28 Feb 13 18:19 2-hellofile
+-rwxr-xr-x 1 innocentb innocentb   39 Feb 13 18:19 3-twofiles
+-rwxr-xr-x 1 innocentb innocentb   35 Feb 13 18:19 4-lastlines
+-rwxr-xr-x 1 innocentb innocentb   35 Feb 13 18:19 5-firstlines
+-rwxr-xr-x 1 innocentb innocentb   36 Feb 13 18:19 6-third_line
+-rwxr-xr-x 1 innocentb innocentb   82 Feb 13 18:19 7-file
+-rwxr--r-- 1 innocentb innocentb   49 Feb 13 20:52 8-cwd_state
+-rwxr--r-- 1 innocentb innocentb   47 Feb 13 18:25 9-duplicate_last_line
+-rwxr-xr-x 1 innocentb innocentb   80 Feb 13 18:19 commit
+-rw-r--r-- 1 innocentb innocentb   19 Feb 13 18:19 README.md
