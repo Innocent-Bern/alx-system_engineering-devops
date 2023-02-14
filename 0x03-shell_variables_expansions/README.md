@@ -6,3 +6,4 @@
 
 2-path: Script adds /action to the PATH. /action should be the last directory the shell looks into when looking for a program.
 
+2-path: Script adds /action to the PATH. /action should be the last directory the shell looks into when looking for a program.
