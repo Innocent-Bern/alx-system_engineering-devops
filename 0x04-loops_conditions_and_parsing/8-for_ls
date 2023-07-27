@@ -1,7 +1,9 @@
 #!/usr/bin/env bash
 # script that displays files in current directory
 
-for files in $(ls)
+cur_dir=$(ls)
+
+for files in $cur_dir
 do
-	echo $files | cut -d '-' -f2
+	echo "$files" | cut -d '-' -f2
 done
