@@ -1,38 +1,66 @@
 One server web infrastructure that hosts www.foobar.com:
 
-When the user wants to access www.foobar.com they'll type in the web address www.foobar.com in their browser which will be the client. The first step will be converting www.foobar.com in a computer friendly IP address and this will be the address of our server. This is required since web browsers interact through Internet Protocol (IP) addresses.
+When the user wants to access www.foobar.com they'll type in the web 
+address www.foobar.com in their browser which will be the client. 
+The first step will be converting www.foobar.com in a computer 
+friendly IP address and this will be the address of our server. This 
+is required since web browsers interact through Internet Protocol (IP) 
+addresses.
 
-This is done through the DNS (Domain Name System). The role of the DNS is to translate domain names into IP addresses which means that the role of a domain name is to act as a simpler version of the address of our sites e.g. www.foobar.com will represent 8.8.8.8. There are 4 DNS servers involved and they are DNS recursor, Root namesever, TLD (top level domain) server and the Authoritative server.
+This is done through the DNS (Domain Name System). The role of the 
+DNS is to translate domain names into IP addresses which means that 
+the role of a domain name is to act as a simpler version of the 
+address of our sites e.g. www.foobar.com will represent 8.8.8.8. There 
+are 4 DNS servers involved and they are DNS recursor, Root namesever, 
+TLD (top level domain) server and the Authoritative server.
 
-Once the DNS has made the translation it responds to the web browser with the IP address of the domain requested initially. The browser can then make a HTTP request to this IP address and the server at this address will return the webpage to be rendered in the browser.
+Once the DNS has made the translation it responds to the web browser 
+with the IP address of the domain requested initially. The browser can 
+then make a HTTP request to this IP address and the server at this 
+address will return the webpage to be rendered in the browser.
 
 Specifics about the infrastructure:
 Server:
-The term server refers to either computer hardware or a virtual program that acts as a central repository of information and programs and clients can access it via a network. Servers run operating systems with the most popular being linux versions. There are various types including application servers, web servers, database servers etc.
+The term server refers to either computer hardware or a virtual 
+program that acts as a central repository of information and programs 
+and clients can access it via a network. Servers run operating systems 
+with the most popular being linux versions. There are various types 
+including application servers, web servers, database servers etc.
 
 Role of the domain name:
-The role of a domain name is to act as a reference to the IP address of a server containing the needed web resources. For example www.foobar.com represents 8.8.8.8 It makes it easier to identify internet resources.
+The role of a domain name is to act as a reference to the IP address 
+of a server containing the needed web resources. For example www.
+foobar.com represents 8.8.8.8 It makes it easier to identify internet 
+resources.
 
 What type of DNS record www is in www.foobar.com?
 The record is the Internet Protocol (IP) address 8.8.8.8
 
 Role of the web server:
-The role of a web server is to accept requests for data and send the specified documents or respond with an error message if they can't be fetched. It handles HTTP requests and responses only. It delivers static content.
+The role of a web server is to accept requests for data and send the 
+specified documents or respond with an error message if they can't be 
+fetched. It handles HTTP requests and responses only. It delivers 
+static content.
 
 Role of the application server:
-The role of an application server is to enable clients to interact with the business logic to generate and deliver dynamic content.
+The role of an application server is to enable clients to interact 
+with the business logic to generate and deliver dynamic content.
 
 What is the server using to communicate with the computer of the user requesting the website?
 The server and client communicate via HTTP or HTTPs protocols.
 
 Issues with this infrastructure:
 SPOF:
-The single point of failure for this type of infrastructure will be the server. If the server happens to be offline users will not be able to access our website.
+The single point of failure for this type of infrastructure will be 
+the server. If the server happens to be offline users will not be able 
+to access our website.
 
 Also we are limited to only the amount of traffic the single server can handle beyond which the site might crash.
 
 Downtime when maintenance is needed:
-The site will have to go offline during server maintenance because we are limited to one server.
+The site will have to go offline during server maintenance because we 
+are limited to one server.
 
 Can not scale if too much incoming traffic:
-We are limited to the maximum traffic that the server can manage. If the server becomes overwhelmed the site will crash.
+We are limited to the maximum traffic that the server can manage. If 
+the server becomes overwhelmed the site will crash.
