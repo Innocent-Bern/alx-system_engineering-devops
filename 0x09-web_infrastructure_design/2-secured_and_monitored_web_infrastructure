@@ -1,0 +1,30 @@
+Secure three server web infrastructure
+
+Specifics about this infrastructure:
+3 firewalls:
+The purpose of the firewalls will be to secure the three servers and 
+protect them from cyber attacks, preventing unauthorized access of 
+critical data.
+
+1 SSL certificate:
+The SSL certificate will ensure that our data is encrypted when the 
+server and client communicate. The data will be transmitted via the 
+HTTPS protocol and not HTTP.
+
+3 monitoring clients:
+Monitoring clients will gather data about the system performance and 
+help in identifying bottlenecks and potential errors in the system.
+
+Issues with this infrastructure:
+Terminating SSL at the load balancer:
+Terminating the SSL at the load balancer is risky because traffic 
+between the load balance and the servers will be unencrypted
+
+Having one MySQL server capable of accepting write:
+This will become a SPOF because if the server fails to write and 
+update the records the system will have failed.
+
+Servers with all the same components:
+This limits how quickly the system can scale and also identify and fix 
+issues. It is easier to set up servers dedicated to only one task. 
+This will also make it easier to identify the source of errors.
