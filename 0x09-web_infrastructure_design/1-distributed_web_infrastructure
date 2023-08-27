@@ -1,0 +1,50 @@
+Three server web infrastructure:
+
+Specifics about this infrastructure:
+2 additional servers:
+Additional servers will be required to help with scalability, 
+redundancy and make the system more robust and fault tolerant.
+
+Web server:
+Handle incoming traffic and serve the required content.
+
+Application server:
+Deliver dynamic content and allow clients to interact with the business logic.
+
+Load balancer:
+Load balancing refers to efficiently distributing network traffic 
+across a group of servers. This is necessary in our design since we 
+have more than one server. This helps in scaling up in a cost 
+effective manner, ensures that no one server is overworked, redundancy 
+and improves flexibility.
+
+Distribution algorithm:
+It uses a least connection distribution algorithm. This works by 
+sending a new request to the server with the fewest current 
+connections to clients.
+
+Load balancer setup:
+It's configured to an active-active setup which is made up of at least 
+2 noded running simultaneously. This means that all three servers will 
+be active. This differs from the active-passive setup which requires 
+one server to be on standby in case the primary server fails.
+
+MySQL Database:
+An additional database is required to act as the replica database. The 
+primary node also known as the master node accepts writes while the 
+replica node can only process read-only transactions. This will ensure 
+there are no data conflicts, provide fault tolerance and load 
+splitting.
+
+Issues with this infrastructure:
+SPOF:
+The single point of failure will be the load balancer. If it fails the 
+client will be unable to access the website.
+
+Security issues:
+There are no firewalls and incoming traffic is not secure and it's 
+also unencrypted meaning that it can be intercepted.
+
+No monitoring:
+Other lurking bottlenecks and issues have not been identified since 
+there is no monitoring.
