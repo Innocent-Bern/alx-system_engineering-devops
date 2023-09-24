@@ -1,0 +1,4 @@
+# config ssh to connect without typing password
+
+PasswordAuthentication no
+IdentifyFile ~/.ssh/school
