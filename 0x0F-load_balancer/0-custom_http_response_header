@@ -1,0 +1,49 @@
+#!/usr/bin/env bash
+# setup and configure a web server
+
+sudo apt-get -y update
+sudo apt-get -y install nginx
+echo "Hello World!" > /var/www/html/index.nginx-debian.html
+
+echo "Ceci n'est pas une page" > 404.html
+sudo mv 404.html /var/www/html
+echo "server {
+   listen 80 default_server;
+   listen [::]:80 default_server;
+   
+   root /var/www/html;
+   index index.html;
+   location /redirect_me {
+      return 301 https://www.youtube.com/watch?v=QH2-TGUlwu4;
+   }
+   error_page 404 /404.html;
+   location = /404.html{
+      internal;
+   }
+}" > default
+sudo mv -f default /etc/nginx/sites-available/default
+
+sudo ufw allow 'Nginx HTTP'
+SERVER_CONFIG=\
+"server {
+	listen 80 default_server;
+	listen [::]:80 default_server;
+
+	index index.nginx-debian.html;
+	server_name _;
+	location / {
+		try_files \$uri \$uri/ =404;
+	}
+	if (\$request_filename ~ redirect_me){
+		rewrite ^ https://www.youtube.com/watch?v=QH2-TGUlwu4 permanent;
+	}
+	add_header X-Served-By $HOSTNAME;
+}"
+
+bash -c "echo -e '$SERVER_CONFIG' > /etc/nginx/sites-enabled/default"
+
+if [ "$(pgrep -c nginx)" -le 0 ]; then
+	service nginx start
+else
+	service nginx restart
+fi
