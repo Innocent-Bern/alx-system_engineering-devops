@@ -1,4 +1,5 @@
 #!/usr/bin/env bash
+# configure redirections on nginx server
 
 sudo apt-get -y update
 sudo apt-get -y install nginx
