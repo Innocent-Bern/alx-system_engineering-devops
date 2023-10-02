@@ -4,7 +4,7 @@
 sudo apt-get -y update
 sudo apt-get -y install nginx
 sudo service nginx start
-sudo echo "Server {
+echo "Server {
 	server_name 18.233.66.148;
 	rewrite ^/redirect_me$ https://www.youtube.com/watch?v=QH2-TGUlwu4 permanent;
 }" >> /ect/nginx/sites_enabled/default
