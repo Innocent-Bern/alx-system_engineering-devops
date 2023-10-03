@@ -15,6 +15,6 @@ frontend myfrontend
 backend mybackend
  	balance roundrobin
  	server 223183-web-01 18.233.66.148:80 check
-	server server2 54.236.184.219:80 check
+	server 223183-web-02 54.236.184.219:80 check
 " >> /etc/haproxy/haproxy.cfg
 sudo systemctl restart haproxy
