@@ -1,0 +1,20 @@
+#!/usr/bin/env bash
+# script to ensure nginx listens to port 80
+
+echo "
+server {
+        listen 80 default_server;
+        listen [::]:80 default_server;
+	root /var/www/html;
+	index index.nginx-debian.html;
+
+	location /hbnb_static {
+        	alias /data/web_static/current;
+	        index index.html;
+	}
+        location /redirect_me {
+                return 301  https://www.youtube.com/watch?v=QH2-TGUlwu4;
+        }
+	add_header X-Served-By 223183-web-01;
+}" > /etc/nginx/sites-enabled/default
+sudo service nginx restart
