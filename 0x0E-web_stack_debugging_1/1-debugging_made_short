@@ -1,0 +1,5 @@
+#!/usr/bin/env bash
+# script to ensure nginx listens to port 80
+sudo apt-get purge nginx nginx-common nginx-full
+sudo apt-get install nginx
+sudo service nginx start
