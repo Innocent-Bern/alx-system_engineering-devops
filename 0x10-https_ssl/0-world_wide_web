@@ -1,4 +1,5 @@
 #!/usr/bin/env bash
+# script that prints out remote server address from sub-domain
 
 DOMAIN=$1
 
