@@ -3,16 +3,16 @@
 DOMAIN=$1
 
 print_func () {
-	IP=nslookup $1.$DOMAIN | grep 'Address: *[0-9]' | cut -d ":" -f 2 | tr '\n' ' '
-	awk '{print "The subdomain $1 is a A record and points to$IP"}'
+	IP=$(nslookup $1.$DOMAIN | grep 'Address: *[0-9]' | cut -d ":" -f 2 | tr '\n' ' ')
+	echo $IP | awk '{print "The subdomain " $1 " is a A record and points to" $IP}'
 }
 
 if [ $# -gt 1 ]; then
-	IP=nslookup $2.$1 | grep 'Address: *[0-9]' | cut -d ":" -f 2 | tr '\n' ' '
-	awk '{print "The subdomain $2 is a A record and points to$IP"}'
+	IP=$(nslookup $2.$DOMAIN | grep 'Address: *[0-9]' | cut -d ":" -f 2 | tr '\n' ' ')
+	echo $IP | awk '{print "The subdomain " $1 " is a A record and points to" $IP}'
 else
-	print_func www
-	print_func lb-01
-	print_func web-01
-	print_func web-02	
+	print_func "www"
+	print_func "lb-01"
+	print_func "web-01"
+	print_func "web-02"
 fi
