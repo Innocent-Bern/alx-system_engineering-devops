@@ -10,7 +10,7 @@ print_func () {
 
 if [ $# -gt 1 ]; then
 	IP=$(nslookup $2.$DOMAIN | grep 'Address: *[0-9]' | cut -d ":" -f 2 | tr '\n' ' ')
-	echo "$2 $IP" | awk '{print "The subdomain " $2 " is a A record and points to " $2}'
+	echo "$2 $IP" | awk '{print "The subdomain " $1 " is a A record and points to " $2}'
 else
 	print_func "www"
 	print_func "lb-01"
