@@ -25,7 +25,7 @@ if __name__ == '__main__':
     for item in todos:
         title = item.get('title')
         status = item.get('completed')
-        t_array.append({"task": title, "complete": status, "username": u_name})
+        t_array.append({"task": title, "completed": status, "username": u_name})
 
     with open(f"{uid}.json", "w") as outfile:
         json.dump({uid: t_array}, outfile)
