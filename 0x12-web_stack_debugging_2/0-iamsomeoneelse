@@ -1,0 +1,5 @@
+#!/usr/bin/env bash
+# script that creates new user
+
+sudo useradd "$1"
+echo whoami | sudo su "$1"
